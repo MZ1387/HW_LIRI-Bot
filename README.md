@@ -5,7 +5,7 @@ In this assignment, I made LIRI. LIRI is like iPhone's SIRI. However, while SIRI
 - https://mz1387.github.io/HW_LIRI-Bot/ -->
 
 
-### What Each Command Should Do
+## What Each Command Should Do
 
 1. `node liri.js my-tweets`
 
