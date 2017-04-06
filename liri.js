@@ -59,30 +59,57 @@ function myTweets() {
 
 // spotifyThisSong function makes call to spotify. Takes in song parameter
 function spotifyThisSong(song) {
-    // spotify method makes search request and console logs data properties
-    spotify.search({
-        type: 'track',
-        query: song
-    }, function(err, data) {
-        if (err) {
-            console.log('Error occurred: ' + err);
-            return;
-        } else {
-            var spotifyObject = data.tracks.items
-            for (var i = 0; i < spotifyObject.length; i++) {
+
+    // if no song is input default to 'The Sign' by Ace of Base
+    if (song === '') {
+        spotify.search({
+            type: 'track',
+            query: 'The Sign'
+        }, function(err, data) {
+            if (err) {
+                console.log('Error occurred: ' + err);
+                return;
+            } else {
+                var spotifyObject = data.tracks.items
+
                 console.log("---------------------");
-                console.log("Artist: " + spotifyObject[i].album.artists[0].name);
-                console.log("Song Name: " + spotifyObject[i].name);
-                console.log("Preview Link: " + spotifyObject[i].external_urls.spotify);
-                console.log("Album: " + spotifyObject[i].album.name);
+                console.log("Artist: " + spotifyObject[2].album.artists[0].name);
+                console.log("Song Name: " + spotifyObject[2].name);
+                console.log("Preview Link: " + spotifyObject[2].external_urls.spotify);
+                console.log("Album: " + spotifyObject[2].album.name);
                 console.log("---------------------");
             }
-        }
-    });
+        });
+    } else {
+        // spotify method makes search request and console logs data properties
+        spotify.search({
+            type: 'track',
+            query: song
+        }, function(err, data) {
+            if (err) {
+                console.log('Error occurred: ' + err);
+                return;
+            } else {
+                var spotifyObject = data.tracks.items
+                for (var i = 0; i < spotifyObject.length; i++) {
+                    console.log("---------------------");
+                    console.log("Artist: " + spotifyObject[i].album.artists[0].name);
+                    console.log("Song Name: " + spotifyObject[i].name);
+                    console.log("Preview Link: " + spotifyObject[i].external_urls.spotify);
+                    console.log("Album: " + spotifyObject[i].album.name);
+                    console.log("---------------------");
+                }
+            }
+        });
+    }
 }
 
 // movieThis function makes call to omdb. Takes in movie parameter
 function movieThis(movie) {
+    // if no movie is input default to 'Mr. Nobody.'
+    if (movie === '') {
+        movie = 'Mr. Nobody.';
+    }
     // request parameter to make omdb request
     var queryUrl = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&r=json";
 
