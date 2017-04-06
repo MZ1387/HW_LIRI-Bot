@@ -1,8 +1,8 @@
 # HW_LIRI-Bot
 In this assignment, I made LIRI. LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.
 
-## Live Link (GitHub Pages)
-- https://mz1387.github.io/HW_LIRI-Bot/
+<!-- ## Live Link (GitHub Pages)
+- https://mz1387.github.io/HW_LIRI-Bot/ -->
 
 
 ### What Each Command Should Do
