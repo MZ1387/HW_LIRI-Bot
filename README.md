@@ -52,5 +52,5 @@ In this assignment, I made LIRI. LIRI is like iPhone's SIRI. However, while SIRI
 
 ## Code Explanation
 
-- This is a command line node app that takes in parameters and a user back data.
-- When a user submits preset commands the application will return data back from either Twitter, Spotify or OMDB.
+- This is a command line node app that takes in parameters and returns a user's data back.
+- When a user submits a preset command the application will return data back from either Twitter, Spotify or OMDB.
