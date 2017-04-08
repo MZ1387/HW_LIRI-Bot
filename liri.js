@@ -111,7 +111,7 @@ function movieThis(movie) {
         movie = 'Mr. Nobody.';
     }
     // request parameter to make omdb request
-    var queryUrl = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&r=json";
+    var queryUrl = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=full&tomatoes=true&r=json";
 
     // request method makes request and console logs response properties
     request(queryUrl, function(error, response, body) {
@@ -120,10 +120,13 @@ function movieThis(movie) {
             console.log("Title: " + JSON.parse(body).Title);
             console.log("Released: " + JSON.parse(body).Year);
             console.log("Rating: " + JSON.parse(body).imdbRating);
+            console.log("Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value);
+            console.log("Rotten Tomatoes URL: " + JSON.parse(body).tomatoURL);
             console.log("Produced In: " + JSON.parse(body).Country);
             console.log("Language(s): " + JSON.parse(body).Language);
             console.log("Actors: " + JSON.parse(body).Actors);
             console.log("Plot: " + JSON.parse(body).Plot);
+            // console.log(JSON.parse(body));
             console.log("--------------------------------");
         }
     });
